@@ -15,6 +15,15 @@ class CreateLivrosTable extends Migration
     {
         Schema::create('livros', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('pessoa_id');
+            $table->foreign('pessoa_id')->references('id')->on('pessoas')->onDelete('cascade');
+            $table->string('nome');
+            $table->string('categoria');
+            $table->string('codigo');
+            $table->string('autor');
+            $table->boolean('ebook');
+            $table->decimal('tamanho_do_arquivo', 12,2)->nullable();
+            $table->decimal('peso', 12,2)->nullable();
             $table->timestamps();
         });
     }
