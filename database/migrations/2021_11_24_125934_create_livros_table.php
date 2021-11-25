@@ -22,8 +22,8 @@ class CreateLivrosTable extends Migration
             $table->string('codigo');
             $table->string('autor');
             $table->boolean('ebook');
-            $table->decimal('tamanho_do_arquivo', 12,2)->nullable();
-            $table->decimal('peso', 12,2)->nullable();
+            $table->integer('tamanho_do_arquivo')->nullable();
+            $table->integer('peso')->nullable();
             $table->timestamps();
         });
     }
